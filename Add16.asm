@@ -1,0 +1,19 @@
+DATA SEGMENT
+    A DW 9384H
+    B DW 7845h
+    SUM DW ?
+    CARRY DB 00H
+DATA ENDS
+CODE SEGMENT
+    ASSUME CS:CODE, DS:DATA
+    START:
+          MOV AX, DATA
+          MOV DS, AX
+          MOV AX, A
+          ADD AX, B
+          JNC SKIP
+          INC CARRY
+    SKIP: MOV SUM, AX
+          INT 03H
+CODE ENDS
+END START

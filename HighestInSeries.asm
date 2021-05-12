@@ -1,0 +1,16 @@
+CODE SEGMENT
+    ASSUME CS:CODE
+START: MOV AX, 4000H
+       MOV DS, AX
+       MOV SI, 2000H
+       MOV CX, 0064H
+       MOV AL, 00H
+BACK:  CMP AL, [SI]
+       JNC SKIP
+       MOV AL, [SI]
+SKIP:  INC SI
+       LOOP BACK
+       MOV [SI], AL
+       INT 03H
+CODE ENDS
+    END START
