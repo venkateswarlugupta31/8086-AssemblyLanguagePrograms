@@ -33,7 +33,7 @@ CODE SEGMENT
             MOV CARRY, 01H      ; Incrementing carry
     
     SKIP:   MOV CX, 0000H       ; Making CX zero, to add with previously stored sum
-            ADD CH, AL          ; getting value of AL to CH(Why in CH?  Because, the are higher byte numbers)
+            ADD CH, AL          ; getting value of AL to CH(Why in CH?  Because, they are higher byte numbers)
             ADD CX, SUM         ; We are storing in memory (since addition between memory and register is not possible
             MOV SUM, CX         ; two steps)
             
