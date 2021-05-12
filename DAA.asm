@@ -1,4 +1,4 @@
-; DAA WORKS ONLY IN AX REGISTER
+; DAA WORKS ONLY IN AL REGISTER (NOT EVEN AX, OR AH)
 ; IF LOWER NIBBLE 
 ;     GREATER THAN 9 OR AUXILLARY CARRY IS 1, THEN ADD 06
 ; IF HIGHER NIBBLE 
@@ -7,8 +7,8 @@ CODE SEGMENT
     ASSUME CS:CODE
     START:  MOV AX, 2000H
             MOV DS, AX
-            MOV AL, 25H
-            MOV AH, 25H
+            MOV AL, 99H
+            MOV AH, 99H
             ADD AL, AH
             DAA
             INT 03H
