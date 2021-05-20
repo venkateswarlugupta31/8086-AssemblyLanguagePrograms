@@ -1,0 +1,22 @@
+; 2 x -3
+; TWO's COMPLEMENT OF 3 IS
+; 0000 0011
+; 1111 1100
+; 1111 1101 => FDH
+; 02H x 0FDH
+CODE SEGMENT
+    ASSUME CS:CODE
+    START:  MOV AX, 2000H
+            MOV DS, AX
+            MOV AL, 0FDH
+            MOV AH, 02H
+            IMUL AH
+            INT 03H
+CODE ENDS
+    END START
+Answer:
+    -6
+    TWO's COMPLEMENT OF 6 IS
+    0000 0110
+    1111 1001
+    1111 1010 => FAH

@@ -1,0 +1,27 @@
+ADDITION MACRO N1, N2, SUM
+    MOV AX, N1
+    MOV BX, N2
+    ADD AX, BX
+    MOV SUM, AX
+ENDM
+
+DATA SEGMENT
+    A DW 1111H
+    B DW 2222H
+    CC DW 3333H
+    D DW 1111H
+    S1 DW ?
+    S2 DW ?
+    S DW ?
+DATA ENDS
+CODE SEGMENT
+    ASSUME CS:CODE, DS:DATA
+    START:  MOV AX, DATA
+            MOV DS, AX
+            ADDITION A, B, S1
+            ADDITION CC, D, S2
+            ADDITION S1, S2, S
+            INT 03H
+CODE ENDS
+    END START
+
