@@ -1,0 +1,8 @@
+CODE SEGMENT
+    ASSUME CS: CODE
+    START: 
+            MOV AH, 00000011B
+            MOV AL, 10D
+            INT 03H
+CODE ENDS
+END START
