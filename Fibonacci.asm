@@ -1,5 +1,5 @@
 DATA SEGMENT
-    N DB 04H
+    N DB 05H
 DATA ENDS
 CODE SEGMENT 
     ASSUME CS:CODE, DS:DATA
@@ -17,9 +17,8 @@ CODE SEGMENT
                 SUB CL, 02H         ; CX Iterates for 3 times, as 1st and 2nd fibonacci numbers are known
                 MOV CH, 00H
 
-    BACK:       MOV BH, BL
-                ADD BH, AL
-                MOV DL, BH          ; DL as C = A + B
+    BACK:       ADD AL, BL
+                MOV DL, AL          ; DL as C = A + B
                 MOV AL, BL
                 MOV BL, DL
                 LOOP BACK
