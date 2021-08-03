@@ -10,9 +10,9 @@ CODE SEGMENT
                 MOV CL, N           ; suppose 5 fibonacci numbers(0, 1, 1, 2, 3)
                 
                 CMP CL, 01H         
-                JZ FINISH1
+                JE FINISH1
                 CMP CL, 02H
-                JZ FINISH2
+                JE FINISH2
 
                 SUB CL, 02H         ; CX Iterates for 3 times, as 1st and 2nd fibonacci numbers are known
                 MOV CH, 00H
